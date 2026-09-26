@@ -1,0 +1,178 @@
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+:root {
+    --dark-green: #051f20;
+    --heavy-green: #0b2b26;
+    --heavy-medium-green: #163832;
+    --mild-medium-green: #235347;
+    --mild-green: #8eb69b;
+    --light-green: #daf1de;
+
+    --light-text: #F8F9FA;
+    --black-text: #1A1A1A;
+
+    --header-height: 20vh;
+}
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 250px;
+    height: var(--header-height);
+    background-color: var(--light-green);
+}
+
+.logo-header {
+    height: 100px;
+    width: 100px;
+    border-radius: 20px;
+    overflow: hidden; /* fix: without this, the img ignored the rounded corners */
+}
+
+.logo-header img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.button-nav {
+    padding: 10px 16px;
+    background-color: var(--mild-green);
+    border-radius: 15px;
+    transition: background-color 0.3s ease-in;
+}
+
+.button-nav a {
+    text-decoration: none;
+    color: var(--light-text);
+}
+
+.button-nav:hover {
+    background-color: var(--dark-green);
+}
+
+/* ==========================================================================
+   Hero / Main
+   ========================================================================== */
+.main {
+    position: relative; /* fix: needed so .kata and .background-image (absolute) anchor here, not to <body> */
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.background-image img {
+    display: block; /* fix: removes the stray inline-image gap */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fix: keeps the photo from stretching/distorting and fills edge-to-edge */
+    object-position: center;
+}
+
+.background-image::after {
+    /* dark overlay so the light-green heading text stays readable over any photo */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 31, 32, 0.45);
+}
+
+.kata {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 24px;
+    color: var(--light-green);
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.h2 {
+    /* font-size: clamp(24px, 4vw, 48px); */
+    font-size: 50px;
+    font-weight: 400;
+    transition: 0.3s all ease-in;
+}
+
+.h1 {
+    /* font-size: clamp(32px, 7vw, 80px); */
+    font-size: 100px;
+    font-weight: 700;
+    line-height: 1.1;
+    transition: 0.3s all ease-in;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.footer {
+    padding: 12px 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-green);
+    color: var(--black-text);
+    font-size: 16px;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+    .header {
+        padding: 12px 16px;
+    }
+
+    .logo-header {
+        height: 60px;
+        width: 60px;
+    }
+
+    .kata {
+        left: 5%;
+        right: 5%;
+        max-width: none;
+    }
+}
