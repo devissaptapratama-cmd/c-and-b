@@ -10,27 +10,34 @@
 }
 
 .card{
+    border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--dark-green);
-    padding: 20px;
+    padding: 10px;
+    margin: 10px;
     /* gap: 20px; */
 }
 
 .card-gambar {
-    width: 150px;      /* atur sesuai selera, ini yang menentukan ukuran gambar */
-    height: 150px;
+    /* atur sesuai selera, ini yang menentukan ukuran gambar */
+    width: 300px;
+    height: 300px;
     border-radius: 12px;
-    overflow: hidden;   /* supaya foto ikut kepotong sesuai bentuk box */
+
+    /*supaya foto ikut kepotong sesuai bentuk box */
+    overflow: hidden;
     margin: 10px;
 }
 
 .card-gambar img {
     width: 100%;
     height: 100%;
-    object-fit: cover;  /* foto mengisi penuh box tanpa gepeng */
+
+    /* foto mengisi penuh box tanpa gepeng */
+    object-fit: cover;
 }
 
 .card-detail{
