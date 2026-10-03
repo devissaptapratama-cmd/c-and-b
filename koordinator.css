@@ -7,6 +7,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    animation: turunDariAtas 0.9s ease 0.3s both;
 }
 
 .card{
@@ -23,6 +24,7 @@
     transition: transform 0.3s ease,
                 box-shadow 0.3s ease;
     /* gap: 20px; */
+
 }
 
 .card:hover{

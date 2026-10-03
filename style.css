@@ -45,6 +45,7 @@ body {
     padding: 20px 250px;
     height: var(--header-height);
     background-color: var(--light-green);
+    animation: turunDariAtas 0.5s ease 0.3s both;;
 }
 
 .header a{
@@ -57,6 +58,7 @@ body {
     width: 100px;
     border-radius: 20px;
     overflow: hidden; /* fix: without this, the img ignored the rounded corners */
+    animation: turunDariAtas 4s ease 0.3s both;
 }
 
 .logo-header img {
@@ -71,6 +73,7 @@ body {
     font-weight: 700;
     transition: transform 0.3s ease,
                 box-shadow 0.3s ease;
+    animation: turunDariAtas 3s ease 0.3s both;
 }
 
 .judul:hover{
@@ -86,6 +89,7 @@ body {
     transition: background-color 0.3s ease,
                 transform 0.3s ease,
                 box-shadow 0.3s ease;
+    animation: turunDariAtas 4s ease 0.3s both;
 }
 
 .button-nav:hover {
@@ -107,6 +111,7 @@ body {
     justify-content: left;
     align-items: center;
     scroll-behavior: smooth;
+    animation: turunDariAtas 0.9s ease 0.3s both;;
 }
 
 .background-image {
@@ -116,6 +121,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: 1;
+    animation: turunDariAtas 1.5s ease 0.3s both;
 }
 
 .background-image img {
@@ -146,6 +152,7 @@ body {
     padding: 0 24px;
     color: var(--light-green);
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    animation: turunDariAtas 3s ease 0.3s both;
 }
 
 .h2 {
@@ -174,6 +181,7 @@ body {
     background-color: var(--light-green);
     color: var(--black-text);
     font-size: 16px;
+    animation: turunDariAtas 1.2s ease 0.3s both;;
 }
 
 /* ==========================================================================
@@ -193,5 +201,16 @@ body {
         left: 5%;
         right: 5%;
         max-width: none;
+    }
+}
+
+@keyframes turunDariAtas {
+    from {
+        opacity: 0;
+        transform: translateY(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
