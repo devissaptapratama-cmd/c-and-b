@@ -67,3 +67,51 @@
 .name{
     color: #ffffff;
 } */
+
+/* Membatasi area pandang slider */
+.slider-container {
+    position: relative;
+    width: 800px;
+    max-width: 90%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+/* Menyusun gambar berjejer ke samping secara horizontal */
+.slider-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Efek geser halus */
+}
+
+.slider-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0; /* Mencegah gambar menyusut */
+}
+
+/* Gaya Tombol Navigasi */
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.btn-prev { left: 15px; }
+.btn-next { right: 15px; }
