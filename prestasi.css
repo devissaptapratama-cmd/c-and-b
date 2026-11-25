@@ -1,0 +1,219 @@
+/* ==========================================================
+   PRESTASI - PERCANTIK TAMPILAN
+   Pasang SETELAH style.css:
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="prestasi.css">
+   ========================================================== */
+
+/* ---------- LATAR HALAMAN ---------- */
+body.page-prestasi {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(201, 169, 166, .35), transparent 40%),
+    radial-gradient(circle at 90% 100%, rgba(224, 180, 90, .18), transparent 40%),
+    var(--cream);
+}
+
+/* ---------- NAVBAR ---------- */
+.page-prestasi .navbar {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .3);
+}
+
+.page-prestasi nav a {
+  position: relative;
+  transition: background .25s, color .25s;
+}
+
+.page-prestasi nav a.active {
+  box-shadow: inset 0 -3px 0 var(--gold);
+}
+
+/* ---------- HERO ---------- */
+.page-hero {
+  min-height: 340px;
+  padding: 40px 70px;
+  background:
+    repeating-conic-gradient(rgba(255, 255, 255, .035) 0 25%, transparent 0 50%) 0 0 / 70px 70px,
+    linear-gradient(135deg, #1a0204 0%, #3a0a0e 100%);
+}
+
+.page-hero::before {
+  background:
+    linear-gradient(120deg, rgba(58, 10, 14, .55), rgba(0, 0, 0, .1)),
+    url('image/hero-prestasi.jpg') center / cover no-repeat,
+    linear-gradient(135deg, #7a4a2a, #2a1210);
+}
+
+.page-hero::after {
+  background: linear-gradient(90deg, #000, #120203);
+  filter: drop-shadow(8px 0 18px rgba(0, 0, 0, .6));
+}
+
+.page-hero h1 {
+  font-size: 58px;
+  letter-spacing: 6px;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, .5);
+  animation: naikPelan .8s ease both;
+}
+
+.page-hero h1::after {
+  content: '';
+  display: block;
+  width: 90px;
+  height: 5px;
+  margin-top: 16px;
+  border-radius: 4px;
+  background: var(--gold);
+}
+
+/* ---------- HEADER KATEGORI ---------- */
+.kategori-head {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(120deg, #7d2027 0%, var(--maroon) 55%, #4a0e12 100%);
+  border-left: 8px solid var(--gold);
+  box-shadow: 0 8px 18px rgba(58, 10, 14, .35);
+}
+
+.kategori-head::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .06);
+}
+
+.kategori-icon {
+  border: 4px solid var(--gold);
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, .15);
+}
+
+.kategori-head h2 {
+  letter-spacing: 4px;
+  text-shadow: 0 3px 8px rgba(0, 0, 0, .35);
+}
+
+/* ---------- KARTU ---------- */
+.p-card {
+  position: relative;
+  transition: transform .3s ease, box-shadow .3s ease;
+  animation: naikPelan .7s ease both;
+}
+
+.p-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 26px rgba(58, 10, 14, .35);
+}
+
+/* Urutan muncul satu per satu */
+.p-card:nth-of-type(2) { animation-delay: .10s; }
+.p-card:nth-of-type(3) { animation-delay: .20s; }
+.p-card:nth-of-type(4) { animation-delay: .30s; }
+.p-card:nth-of-type(5) { animation-delay: .40s; }
+
+/* Gambar: tetap rapi walau file belum ada */
+.p-card img {
+  background: linear-gradient(135deg, #8a6a5a, #3a0a0e);
+  color: transparent;
+  font-size: 0;
+}
+
+/* Garis emas di sisi kanan foto */
+.p-card img {
+  border-right: 4px solid var(--gold);
+}
+
+.p-body {
+  gap: 20px;
+  padding: 22px 26px;
+}
+
+/* ---------- BADGE JUDUL ---------- */
+.badge {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .25);
+  letter-spacing: .5px;
+}
+
+.badge::before {
+  content: '🏆 ';
+}
+
+/* ---------- ISI PRESTASI ---------- */
+.p-body p,
+.p-body ol {
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+.p-body ol li {
+  margin-bottom: 8px;
+  padding-left: 4px;
+}
+
+.p-body ol li::marker {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.p-card.light .p-body ol li::marker {
+  color: var(--maroon);
+}
+
+.p-card.dark .p-body ol li::marker {
+  color: var(--gold);
+}
+
+/* Kartu putih: sedikit gradasi supaya tidak datar */
+.p-card.light {
+  background: linear-gradient(135deg, #ffffff 60%, #f6efe6 100%);
+}
+
+/* Kartu maroon: garis emas halus di atas */
+.p-card.dark {
+  background: linear-gradient(135deg, #7d2027 0%, var(--maroon) 50%, #4a0e12 100%);
+}
+
+/* ---------- ANIMASI ---------- */
+@keyframes naikPelan {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hero h1,
+  .p-card {
+    animation: none;
+  }
+
+  .p-card:hover {
+    transform: none;
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1000px) {
+  .page-hero h1 {
+    font-size: 40px;
+    letter-spacing: 3px;
+  }
+
+  .p-card img {
+    border-right: 0;
+    border-bottom: 4px solid var(--gold);
+  }
+
+  .p-body p,
+  .p-body ol {
+    font-size: 18px;
+  }
+}
